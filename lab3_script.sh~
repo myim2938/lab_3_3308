@@ -1,0 +1,24 @@
+#!/bin/bash
+# Authors : Your Name & Your partner's name
+# Date: 1/1/2019
+
+# Ask for user input & store
+echo "Input filename"
+read filename
+echo "Input regex"
+read regex
+
+# Search regex of user input within file
+# grep -E "$regex" $filename
+
+grep -E -c "^(([0-9]{3})[-]([0-9]{3})[-]([0-9]{4}))" $filename
+
+grep -E -c "[A-Za-z0-9]+[@]+[A-Za-z0-9]+[.com]+" $filename
+
+# grep -E -o "^(303)[0-9-]{9}" $filename
+
+grep -E "@geocities.com" $filename >> email_results.txt
+
+# git add email_results.txt
+# git commit -m "Staged email results textfile"
+
